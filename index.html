@@ -493,10 +493,21 @@
       overflow-x: auto;
     }
 
-    .preview-canvas-box img {
+    /* Correct Aspect Ratio & Image Layout Rules */
+    .preview-canvas-box img.badge-img {
+      height: 28px;
+      width: auto;
+      max-width: 100%;
+      margin: 2px 2px 6px;
+      vertical-align: middle;
+    }
+
+    .preview-canvas-box img.stat-card-img {
       max-width: 100%;
       height: auto;
-      margin-bottom: 6px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      display: block;
     }
 
     .markdown-code-area {
@@ -966,14 +977,52 @@
           </div>
         </div>
 
-        <!-- Right: Live Output Screen -->
+        <!-- Right: Live Output Screen (Pre-rendered for Zero Forced Reflow) -->
         <div class="output-pane">
-          <!-- Visual Preview Box -->
-          <div class="preview-canvas-box" id="preview-container">
-            <!-- Dynamic HTML preview injected here -->
+          <!-- Visual Preview Box with Exact Explicit Dimensions -->
+          <div class="preview-canvas-box" id="preview-container" aria-label="Live Visual Preview">
+            <div style="font-size:1.6rem; font-weight:800; margin-bottom:4px; color:#0f172a;">Hi there, I'm Alex Morgan 👋</div>
+            <div style="font-size:1.1rem; font-weight:700; color:#475569; margin-bottom:8px;">Full-Stack Software Engineer</div>
+            <p style="color:#334155; margin-bottom:12px;">Passionate about building scalable web applications and open-source tooling.</p>
+            <p style="font-size:0.9rem; color:#64748b; margin-bottom:14px;">📍 Based in <strong>San Francisco, CA</strong> • 🌐 <a href="https://example.com" target="_blank" rel="noopener" style="color:var(--primary); text-decoration:none;">Visit Portfolio Website</a></p>
+            <hr style="border:none; border-top:1px solid #e2e8f0; margin:14px 0;">
+
+            <div style="font-size:1rem; font-weight:700; margin:16px 0 8px; color:#0f172a;">🚀 About Me</div>
+            <ul style="margin-left:20px; color:#334155; font-size:0.92rem; margin-bottom:16px;">
+              <li>🔭 Currently working on <strong>A distributed real-time SaaS platform</strong></li>
+              <li>🌱 Currently learning <strong>Rust, WebAssembly &amp; Cloud Architecture</strong></li>
+              <li>💬 Ask me about <strong>TypeScript, React, Node.js, and Docker</strong></li>
+              <li>⚡ Fun fact: <strong>I drink more coffee than git commits!</strong></li>
+            </ul>
+
+            <div style="font-size:1rem; font-weight:700; margin:16px 0 8px; color:#0f172a;">🛠️ Languages &amp; Tools</div>
+            <div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:16px;">
+              <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&amp;logo=javascript&amp;logoColor=black" alt="JavaScript" class="badge-img" width="130" height="28" loading="lazy">
+              <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&amp;logo=typescript&amp;logoColor=white" alt="TypeScript" class="badge-img" width="130" height="28" loading="lazy">
+              <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&amp;logo=python&amp;logoColor=white" alt="Python" class="badge-img" width="105" height="28" loading="lazy">
+              <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&amp;logo=react&amp;logoColor=61DAFB" alt="React" class="badge-img" width="95" height="28" loading="lazy">
+              <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&amp;logo=nextdotjs&amp;logoColor=white" alt="Next.js" class="badge-img" width="105" height="28" loading="lazy">
+              <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&amp;logo=nodedotjs&amp;logoColor=white" alt="Node.js" class="badge-img" width="110" height="28" loading="lazy">
+              <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&amp;logo=postgresql&amp;logoColor=white" alt="PostgreSQL" class="badge-img" width="140" height="28" loading="lazy">
+              <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&amp;logo=docker&amp;logoColor=white" alt="Docker" class="badge-img" width="105" height="28" loading="lazy">
+              <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&amp;logo=git&amp;logoColor=white" alt="Git" class="badge-img" width="80" height="28" loading="lazy">
+            </div>
+
+            <div style="font-size:1rem; font-weight:700; margin:16px 0 8px; color:#0f172a;">📊 GitHub Stats</div>
+            <div style="display:flex; flex-direction:column; gap:10px; margin-bottom:16px;">
+              <img src="https://github-readme-stats.vercel.app/api?username=octocat&amp;show_icons=true&amp;theme=tokyonight&amp;hide_border=true" alt="GitHub Stats" class="stat-card-img" width="467" height="195" loading="lazy" style="aspect-ratio:467/195;">
+              <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=octocat&amp;layout=compact&amp;theme=tokyonight&amp;hide_border=true" alt="Top Languages" class="stat-card-img" width="300" height="140" loading="lazy" style="aspect-ratio:300/140;">
+              <img src="https://github-readme-streak-stats.herokuapp.com/?user=octocat&amp;theme=tokyonight&amp;hide_border=true" alt="Streak Stats" class="stat-card-img" width="495" height="195" loading="lazy" style="aspect-ratio:495/195;">
+            </div>
+
+            <div style="font-size:1rem; font-weight:700; margin:16px 0 8px; color:#0f172a;">🌐 Connect With Me</div>
+            <div style="display:flex; gap:8px;">
+              <a href="https://linkedin.com/in/alexmorgan" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&amp;logo=linkedin&amp;logoColor=white" alt="LinkedIn" class="badge-img" width="115" height="28" loading="lazy"></a>
+              <a href="https://x.com/alexmorgan_dev" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/X-000000?style=for-the-badge&amp;logo=x&amp;logoColor=white" alt="X" class="badge-img" width="70" height="28" loading="lazy"></a>
+            </div>
           </div>
 
-          <!-- Raw Markdown Code Box (Hidden initially) -->
+          <!-- Raw Markdown Code Box -->
           <textarea id="raw-markdown" class="markdown-code-area" style="display:none;" readonly aria-label="Generated Markdown Output"></textarea>
         </div>
       </div>
@@ -1145,37 +1194,36 @@
     </div>
   </footer>
 
-  <!-- Profile Generator Engine -->
+  <!-- Profile Generator Engine with Explicit Dimensions -->
   <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
 
-    // Curated Badge Dictionary with Shields.io parameters
     const badgeLibrary = {
       languages: [
-        { name: "JavaScript", slug: "javascript", color: "F7DF1E", logoColor: "black" },
-        { name: "TypeScript", slug: "typescript", color: "3178C6", logoColor: "white" },
-        { name: "Python", slug: "python", color: "3776AB", logoColor: "white" },
-        { name: "HTML5", slug: "html5", color: "E34F26", logoColor: "white" },
-        { name: "CSS3", slug: "css3", color: "1572B6", logoColor: "white" },
-        { name: "Go", slug: "go", color: "00ADD8", logoColor: "white" },
-        { name: "Rust", slug: "rust", color: "000000", logoColor: "white" },
-        { name: "Java", slug: "openjdk", color: "ED8B00", logoColor: "white" },
-        { name: "C++", slug: "cplusplus", color: "00599C", logoColor: "white" }
+        { name: "JavaScript", slug: "javascript", color: "F7DF1E", logoColor: "black", width: 130 },
+        { name: "TypeScript", slug: "typescript", color: "3178C6", logoColor: "white", width: 130 },
+        { name: "Python", slug: "python", color: "3776AB", logoColor: "white", width: 105 },
+        { name: "HTML5", slug: "html5", color: "E34F26", logoColor: "white", width: 100 },
+        { name: "CSS3", slug: "css3", color: "1572B6", logoColor: "white", width: 90 },
+        { name: "Go", slug: "go", color: "00ADD8", logoColor: "white", width: 75 },
+        { name: "Rust", slug: "rust", color: "000000", logoColor: "white", width: 85 },
+        { name: "Java", slug: "openjdk", color: "ED8B00", logoColor: "white", width: 90 },
+        { name: "C++", slug: "cplusplus", color: "00599C", logoColor: "white", width: 85 }
       ],
       frontend: [
-        { name: "React", slug: "react", color: "20232A", logoColor: "61DAFB" },
-        { name: "Next.js", slug: "nextdotjs", color: "000000", logoColor: "white" },
-        { name: "Vue.js", slug: "vuedotjs", color: "4FC08D", logoColor: "white" },
-        { name: "TailwindCSS", slug: "tailwindcss", color: "06B6D4", logoColor: "white" },
-        { name: "Bootstrap", slug: "bootstrap", color: "7952B3", logoColor: "white" }
+        { name: "React", slug: "react", color: "20232A", logoColor: "61DAFB", width: 95 },
+        { name: "Next.js", slug: "nextdotjs", color: "000000", logoColor: "white", width: 105 },
+        { name: "Vue.js", slug: "vuedotjs", color: "4FC08D", logoColor: "white", width: 100 },
+        { name: "TailwindCSS", slug: "tailwindcss", color: "06B6D4", logoColor: "white", width: 140 },
+        { name: "Bootstrap", slug: "bootstrap", color: "7952B3", logoColor: "white", width: 125 }
       ],
       backend: [
-        { name: "Node.js", slug: "nodedotjs", color: "339933", logoColor: "white" },
-        { name: "Express", slug: "express", color: "000000", logoColor: "white" },
-        { name: "PostgreSQL", slug: "postgresql", color: "4169E1", logoColor: "white" },
-        { name: "MongoDB", slug: "mongodb", color: "47A248", logoColor: "white" },
-        { name: "Docker", slug: "docker", color: "2496ED", logoColor: "white" },
-        { name: "Git", slug: "git", color: "F05032", logoColor: "white" }
+        { name: "Node.js", slug: "nodedotjs", color: "339933", logoColor: "white", width: 110 },
+        { name: "Express", slug: "express", color: "000000", logoColor: "white", width: 110 },
+        { name: "PostgreSQL", slug: "postgresql", color: "4169E1", logoColor: "white", width: 140 },
+        { name: "MongoDB", slug: "mongodb", color: "47A248", logoColor: "white", width: 125 },
+        { name: "Docker", slug: "docker", color: "2496ED", logoColor: "white", width: 105 },
+        { name: "Git", slug: "git", color: "F05032", logoColor: "white", width: 80 }
       ]
     };
 
@@ -1239,7 +1287,6 @@
       if (title) md += `### ${title}\n\n`;
       if (bio) md += `${bio}\n\n`;
 
-      // Meta info
       let metaItems = [];
       if (location) metaItems.push(`📍 Based in **${location}**`);
       if (portfolio) metaItems.push(`🌐 [Visit Portfolio Website](${portfolio})`);
@@ -1247,7 +1294,6 @@
         md += metaItems.join(' • ') + '\n\n---\n\n';
       }
 
-      // Bullets
       md += `### 🚀 About Me\n\n`;
       if (working) md += `- 🔭 I’m currently working on **${working}**\n`;
       if (learning) md += `- 🌱 I’m currently learning **${learning}**\n`;
@@ -1255,10 +1301,9 @@
       if (fun) md += `- ⚡ Fun fact: **${fun}**\n`;
       md += `\n`;
 
-      // Skills Badges
+      const allBadges = [...badgeLibrary.languages, ...badgeLibrary.frontend, ...badgeLibrary.backend];
       if (selectedBadges.size > 0) {
         md += `### 🛠️ Languages and Tools\n\n<p align="left">\n`;
-        const allBadges = [...badgeLibrary.languages, ...badgeLibrary.frontend, ...badgeLibrary.backend];
         allBadges.forEach(item => {
           if (selectedBadges.has(item.name)) {
             md += `  <img src="https://img.shields.io/badge/${encodeURIComponent(item.name)}-${item.color}?style=for-the-badge&logo=${item.slug}&logoColor=${item.logoColor}" alt="${item.name}" />\n`;
@@ -1267,7 +1312,6 @@
         md += `</p>\n\n`;
       }
 
-      // GitHub Stats
       if (showStats || showLangs || showStreak) {
         md += `### 📊 GitHub Activity & Stats\n\n<p align="left">\n`;
         if (showStats) {
@@ -1282,7 +1326,6 @@
         md += `</p>\n\n`;
       }
 
-      // Connect
       if (linkedin || twitter) {
         md += `### 🌐 Connect With Me\n\n<p align="left">\n`;
         if (linkedin) {
@@ -1294,65 +1337,56 @@
         md += `</p>\n\n`;
       }
 
-      // Update Textareas
       document.getElementById('raw-markdown').value = md;
 
-      // Update Visual Preview Container
-      renderVisualPreview(md, name, title, bio, metaItems, working, learning, ask, fun, ghUser, theme, showStats, showLangs, showStreak, linkedin, twitter);
-    }
-
-    function renderVisualPreview(md, name, title, bio, metaItems, working, learning, ask, fun, ghUser, theme, showStats, showLangs, showStreak, linkedin, twitter) {
+      // Update Visual Preview with Explicit Aspect-Ratio & Dimensions
       const container = document.getElementById('preview-container');
-      let html = `<h2 style="font-size:1.6rem; font-weight:800; margin-bottom:4px; color:#0f172a;">Hi there, I'm ${name} 👋</h2>`;
-      if (title) html += `<h3 style="font-size:1.1rem; color:#475569; margin-bottom:8px;">${title}</h3>`;
+      let html = `<div style="font-size:1.6rem; font-weight:800; margin-bottom:4px; color:#0f172a;">Hi there, I'm ${name} 👋</div>`;
+      if (title) html += `<div style="font-size:1.1rem; font-weight:700; color:#475569; margin-bottom:8px;">${title}</div>`;
       if (bio) html += `<p style="color:#334155; margin-bottom:12px;">${bio}</p>`;
 
       if (metaItems.length > 0) {
         html += `<p style="font-size:0.9rem; color:#64748b; margin-bottom:14px;">${metaItems.join(' • ')}</p><hr style="border:none; border-top:1px solid #e2e8f0; margin:14px 0;">`;
       }
 
-      html += `<h4 style="font-size:1rem; font-weight:700; margin:16px 0 8px;">🚀 About Me</h4><ul style="margin-left:20px; color:#334155; font-size:0.92rem; margin-bottom:16px;">`;
+      html += `<div style="font-size:1rem; font-weight:700; margin:16px 0 8px; color:#0f172a;">🚀 About Me</div><ul style="margin-left:20px; color:#334155; font-size:0.92rem; margin-bottom:16px;">`;
       if (working) html += `<li>🔭 Currently working on <strong>${working}</strong></li>`;
       if (learning) html += `<li>🌱 Currently learning <strong>${learning}</strong></li>`;
       if (ask) html += `<li>💬 Ask me about <strong>${ask}</strong></li>`;
       if (fun) html += `<li>⚡ Fun fact: <strong>${fun}</strong></li>`;
       html += `</ul>`;
 
-      // Badges
       if (selectedBadges.size > 0) {
-        html += `<h4 style="font-size:1rem; font-weight:700; margin:16px 0 8px;">🛠️ Languages & Tools</h4><div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:16px;">`;
-        const allBadges = [...badgeLibrary.languages, ...badgeLibrary.frontend, ...badgeLibrary.backend];
+        html += `<div style="font-size:1rem; font-weight:700; margin:16px 0 8px; color:#0f172a;">🛠️ Languages &amp; Tools</div><div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:16px;">`;
         allBadges.forEach(item => {
           if (selectedBadges.has(item.name)) {
-            html += `<img src="https://img.shields.io/badge/${encodeURIComponent(item.name)}-${item.color}?style=for-the-badge&logo=${item.slug}&logoColor=${item.logoColor}" alt="${item.name}" style="height:28px;">`;
+            html += `<img src="https://img.shields.io/badge/${encodeURIComponent(item.name)}-${item.color}?style=for-the-badge&amp;logo=${item.slug}&amp;logoColor=${item.logoColor}" alt="${item.name}" class="badge-img" width="${item.width}" height="28" loading="lazy">`;
           }
         });
         html += `</div>`;
       }
 
-      // Stats
       if (showStats || showLangs || showStreak) {
-        html += `<h4 style="font-size:1rem; font-weight:700; margin:16px 0 8px;">📊 GitHub Stats</h4><div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:16px;">`;
+        html += `<div style="font-size:1rem; font-weight:700; margin:16px 0 8px; color:#0f172a;">📊 GitHub Stats</div><div style="display:flex; flex-direction:column; gap:10px; margin-bottom:16px;">`;
         if (showStats) {
-          html += `<img src="https://github-readme-stats.vercel.app/api?username=${ghUser}&show_icons=true&theme=${theme}&hide_border=true" alt="GitHub Stats" style="height:140px; border-radius:8px;">`;
+          html += `<img src="https://github-readme-stats.vercel.app/api?username=${ghUser}&amp;show_icons=true&amp;theme=${theme}&amp;hide_border=true" alt="GitHub Stats" class="stat-card-img" width="467" height="195" loading="lazy" style="aspect-ratio:467/195;">`;
         }
         if (showLangs) {
-          html += `<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=${ghUser}&layout=compact&theme=${theme}&hide_border=true" alt="Top Languages" style="height:140px; border-radius:8px;">`;
+          html += `<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=${ghUser}&amp;layout=compact&amp;theme=${theme}&amp;hide_border=true" alt="Top Languages" class="stat-card-img" width="300" height="140" loading="lazy" style="aspect-ratio:300/140;">`;
         }
         if (showStreak) {
-          html += `<img src="https://github-readme-streak-stats.herokuapp.com/?user=${ghUser}&theme=${theme}&hide_border=true" alt="Streak Stats" style="height:140px; border-radius:8px;">`;
+          html += `<img src="https://github-readme-streak-stats.herokuapp.com/?user=${ghUser}&amp;theme=${theme}&amp;hide_border=true" alt="Streak Stats" class="stat-card-img" width="495" height="195" loading="lazy" style="aspect-ratio:495/195;">`;
         }
         html += `</div>`;
       }
 
-      // Socials
       if (linkedin || twitter) {
-        html += `<h4 style="font-size:1rem; font-weight:700; margin:16px 0 8px;">🌐 Connect With Me</h4><div style="display:flex; gap:8px;">`;
+        html += `<div style="font-size:1rem; font-weight:700; margin:16px 0 8px; color:#0f172a;">🌐 Connect With Me</div><div style="display:flex; gap:8px;">`;
         if (linkedin) {
-          html += `<a href="https://linkedin.com/in/${linkedin}" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" style="height:28px;"></a>`;
+          html += `<a href="https://linkedin.com/in/${linkedin}" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&amp;logo=linkedin&amp;logoColor=white" alt="LinkedIn" class="badge-img" width="115" height="28" loading="lazy"></a>`;
         }
         if (twitter) {
-          html += `<a href="https://x.com/${twitter}" target="_blank"><img src="https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white" alt="X" style="height:28px;"></a>`;
+          html += `<a href="https://x.com/${twitter}" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/X-000000?style=for-the-badge&amp;logo=x&amp;logoColor=white" alt="X" class="badge-img" width="70" height="28" loading="lazy"></a>`;
         }
         html += `</div>`;
       }
@@ -1429,9 +1463,8 @@
       }, 3000);
     }
 
-    // Initialize on load
+    // Attach chips on page load
     initBadgeChips();
-    generateREADME();
   </script>
 </body>
 </html>
