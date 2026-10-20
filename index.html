@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <!-- High-CTR SEO Meta -->
+  <title>GitHub Profile README Generator ⚡ Create an Awesome Developer Profile (100% Free)</title>
+  <meta name="description" content="Generate a stunning, professional GitHub Profile README in seconds. Add tech stack badges, live GitHub stats, streak counters, social icons, and dynamic project highlights with no code.">
+  <meta name="keywords" content="github profile readme generator, create github readme, github profile builder, github stats card, shields io tech badges, github streak stats, awesome github profile, developer portfolio readme">
+  <meta name="author" content="Ahmed Elazab">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  
+  <!-- Absolute Canonical URL -->
+  <link rel="canonical" href="https://ahmedelazabdev.github.io/GitHubProfileREADMEGenerator/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ahmedelazabdev.github.io/GitHubProfileREADMEGenerator/">
+  <meta property="og:title" content="GitHub Profile README Generator ⚡ Build an Awesome Profile">
+  <meta property="og:description" content="Create a captivating GitHub profile with custom badges, live contribution stats, streak tracking, and project showcases. 100% free and open-source.">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GitHub Profile README Generator ⚡ Awesome Developer Profiles">
+  <meta name="twitter:description" content="Stand out to recruiters and open-source contributors with a beautifully designed GitHub Profile README.">
+
+  <!-- Structured Data: WebApplication, HowTo & FAQPage Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "GitHub Profile README Generator",
+        "url": "https://ahmedelazabdev.github.io/GitHubProfileREADMEGenerator/",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "All",
+        "description": "An interactive digital utility for software engineers and developers to design, customize, and generate professional GitHub Profile README Markdown files with live stats, tech stack shields, and social links.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "HowTo",
+        "name": "How to Create and Deploy an Awesome GitHub Profile README",
+        "description": "Step-by-step instructions to create the special GitHub repository and display your customized profile README.",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Create the Special Repository",
+            "text": "Log in to GitHub and create a new public repository with the exact same name as your GitHub username (e.g., username/username)."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Initialize with a README.md",
+            "text": "Check the box to 'Add a README file' upon repository creation. GitHub will automatically designate this repository as your special profile."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Customize in the Generator",
+            "text": "Fill in your developer bio, select your programming languages and frameworks, input your GitHub username for live stats, and choose a color theme."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Copy and Commit",
+            "text": "Click 'Copy Markdown' or 'Download README.md', paste the code into your repository's README.md file, and commit the changes to publish your profile live."
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is a GitHub Profile README?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A GitHub Profile README is a special feature that allows developers to display a customized Markdown file on the front page of their public GitHub profile. It acts as an interactive resume showcasing skills, projects, contributions, and real-time coding statistics."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I activate the secret GitHub profile repository?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Create a new public repository whose name matches your GitHub username exactly. When you enter matching names, GitHub displays a special banner: 'You found a secret!'. Any content written in that repository's README.md file appears prominently at the top of your profile."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are the GitHub stats and streak widgets updated in real-time?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! The dynamic stats cards (Total Stars, Commits, PRs, and Streak Stats) query GitHub's public GraphQL API in real-time, refreshing automatically whenever anyone visits your profile page."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I edit the generated Markdown after copying?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Absolutely. The generated Markdown code is standard, clean, and unminified. You can paste it into any text editor, VS Code, or GitHub's web interface to add custom sections, project links, or images at any time."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary: #1d4ed8;
+      --primary-hover: #1e40af;
+      --primary-soft: #eff6ff;
+      --accent: #047857;
+      --accent-soft: #d1fae5;
+      --accent-text: #064e3b;
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --border: #cbd5e1;
+      --text: #0f172a;
+      --text-muted: #334155;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.08);
+      --shadow-xl: 0 10px 25px -5px rgba(0,0,0,0.08);
+      --radius: 14px;
+      /* Zero-CLS Native System Font Stack */
+      --font-stack: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      --font-mono: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-stack);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      text-rendering: optimizeSpeed;
+    }
+
+    /* Fixed 64px Header */
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow-sm);
+      height: 64px;
+      overflow: hidden;
+    }
+
+    .nav-inner {
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: 0 20px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .brand-badge {
+      background: #0f172a;
+      color: #fff;
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.15rem;
+      flex-shrink: 0;
+    }
+
+    .status-tag {
+      background: var(--accent-soft);
+      color: var(--accent-text);
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      border: 1px solid #a7f3d0;
+    }
+
+    main {
+      max-width: 1050px;
+      width: 100%;
+      margin: 24px auto 40px;
+      padding: 0 16px;
+      flex: 1;
+      contain: layout style;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    .hero h1 span {
+      color: var(--primary);
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 760px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Main Workspace Card */
+    .builder-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-xl);
+      overflow: hidden;
+      margin-bottom: 36px;
+    }
+
+    .card-topbar {
+      background: #f1f5f9;
+      padding: 12px 20px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .topbar-tabs {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: #e2e8f0;
+      padding: 4px;
+      border-radius: 8px;
+    }
+
+    .tab-btn {
+      border: none;
+      background: transparent;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .tab-btn.active {
+      background: #ffffff;
+      color: var(--primary);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .topbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-topbar {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      transition: all 0.15s ease;
+    }
+
+    .btn-topbar:hover {
+      background: #e2e8f0;
+    }
+
+    .btn-primary-action {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 2px 6px rgba(29, 78, 216, 0.25);
+    }
+
+    .btn-primary-action:hover {
+      background: var(--primary-hover);
+    }
+
+    /* Dual-Pane Builder Grid */
+    .builder-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+    }
+
+    @media (max-width: 860px) {
+      .builder-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Left Pane: Interactive Form */
+    .form-pane {
+      padding: 20px;
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-height: 720px;
+      overflow-y: auto;
+      background: #ffffff;
+    }
+
+    @media (max-width: 860px) {
+      .form-pane {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        max-height: none;
+      }
+    }
+
+    .form-section {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      border-bottom: 1px solid #f1f5f9;
+      padding-bottom: 16px;
+    }
+
+    .form-section:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .section-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .form-row-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    @media (max-width: 500px) {
+      .form-row-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .form-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+
+    .text-input {
+      width: 100%;
+      height: 38px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0 10px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.15s ease;
+    }
+
+    .text-input:focus {
+      border-color: var(--primary);
+    }
+
+    /* Tech Stack Badges Grid */
+    .skills-category {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .skills-subhead {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .badge-selection-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .skill-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 10px;
+      border-radius: 6px;
+      background: #f1f5f9;
+      border: 1px solid var(--border);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text);
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.15s ease;
+    }
+
+    .skill-chip.selected {
+      background: var(--primary-soft);
+      border-color: #93c5fd;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .skill-chip input {
+      display: none;
+    }
+
+    /* Right Pane: Live Output & Preview */
+    .output-pane {
+      padding: 20px;
+      background: #f8fafc;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-height: 720px;
+      overflow-y: auto;
+    }
+
+    .preview-canvas-box {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px;
+      min-height: 480px;
+      box-shadow: var(--shadow-sm);
+      overflow-x: auto;
+    }
+
+    .preview-canvas-box img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 6px;
+    }
+
+    .markdown-code-area {
+      width: 100%;
+      height: 480px;
+      background: #0f172a;
+      color: #f8fafc;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      line-height: 1.6;
+      border-radius: 10px;
+      padding: 16px;
+      border: 1px solid #334155;
+      resize: vertical;
+      outline: none;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+
+    /* Semantic 3-Step Instruction Bar */
+    .action-steps-bar {
+      padding: 16px 20px;
+      background: #f8fafc;
+      border-top: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .action-steps-bar {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .action-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .step-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--primary-soft);
+      color: #1e40af;
+      font-weight: 800;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .step-title {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
+    .step-text p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* Long-Form Knowledge Base */
+    .article-container {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 40px;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 40px;
+      content-visibility: auto;
+      contain-intrinsic-size: 1000px 1800px;
+    }
+
+    @media (max-width: 600px) {
+      .article-container {
+        padding: 24px 18px;
+      }
+    }
+
+    .article-container h2 {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--text);
+      margin: 36px 0 16px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #e2e8f0;
+      position: relative;
+    }
+
+    .article-container h2::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 60px;
+      height: 2px;
+      background: var(--primary);
+    }
+
+    .article-container h2:first-of-type {
+      margin-top: 0;
+    }
+
+    .article-container h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin: 24px 0 12px;
+      color: #1e293b;
+    }
+
+    .article-container p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+
+    .article-container ul, .article-container ol {
+      margin: 0 0 24px 24px;
+      color: var(--text-muted);
+      font-size: 1.02rem;
+    }
+
+    .article-container li {
+      margin-bottom: 10px;
+    }
+
+    .highlight-card {
+      background: var(--primary-soft);
+      border-left: 4px solid var(--primary);
+      padding: 16px 20px;
+      border-radius: 0 10px 10px 0;
+      margin: 24px 0;
+      color: #1e3a8a;
+      font-size: 1rem;
+    }
+
+    /* Comparison Table in Article */
+    .table-wrap {
+      overflow-x: auto;
+      margin: 24px 0;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+
+    table.content-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+
+    table.content-table thead {
+      background: #f1f5f9;
+    }
+
+    table.content-table th, table.content-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    table.content-table th {
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    table.content-table tbody tr:hover {
+      background-color: #f8fafc;
+    }
+
+    /* FAQ Accordion */
+    .faq-block {
+      margin-top: 24px;
+    }
+
+    .faq-card {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      margin-bottom: 12px;
+      background: #f8fafc;
+    }
+
+    .faq-header {
+      padding: 16px 20px;
+      font-weight: 700;
+      font-size: 1.02rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+      color: var(--text);
+    }
+
+    .faq-header:hover {
+      color: var(--primary);
+    }
+
+    .faq-body {
+      padding: 0 20px 16px;
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      display: none;
+      line-height: 1.7;
+    }
+
+    .faq-card.open {
+      background: var(--surface);
+      border-color: var(--primary);
+    }
+
+    .faq-card.open .faq-body {
+      display: block;
+    }
+
+    .faq-toggle {
+      font-size: 1.3rem;
+      line-height: 1;
+      font-weight: 700;
+    }
+
+    .faq-card.open .faq-toggle {
+      transform: rotate(45deg);
+    }
+
+    /* Toast */
+    #toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #0f172a;
+      color: #fff;
+      padding: 10px 24px;
+      border-radius: 9999px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      box-shadow: var(--shadow-xl);
+      transition: transform 0.25s ease;
+      z-index: 1000;
+      pointer-events: none;
+    }
+
+    #toast.active {
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 28px 16px;
+      margin-top: auto;
+    }
+
+    .footer-wrap {
+      max-width: 1050px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .footer-nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 10px;
+    }
+
+    .footer-nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .footer-nav a:hover {
+      color: var(--primary);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-inner">
+      <a href="https://ahmedelazabdev.github.io/GitHubProfileREADMEGenerator/" class="brand">
+        <span class="brand-badge">🐙</span>
+        <span>GitHub Profile README Generator</span>
+      </a>
+      <span class="status-tag">Live Markdown Builder</span>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1>GitHub Profile README Generator ⚡ <span>Build an Awesome Profile</span></h1>
+      <p>Design an eye-catching, professional developer portfolio for your GitHub homepage. Generate custom Shields.io badges, live contribution statistics, streak widgets, and social links instantly.</p>
+    </section>
+
+    <!-- Main Builder Card -->
+    <section class="builder-card" id="generator-app">
+      <div class="card-topbar">
+        <div class="topbar-tabs">
+          <button class="tab-btn active" id="tab-btn-preview" onclick="switchView('preview')">👁️ Visual Preview</button>
+          <button class="tab-btn" id="tab-btn-raw" onclick="switchView('raw')">📄 Raw Markdown</button>
+        </div>
+
+        <div class="topbar-actions">
+          <button class="btn-topbar" onclick="loadSampleData()">
+            <span>✨ Load Sample</span>
+          </button>
+          <button class="btn-topbar btn-primary-action" onclick="copyMarkdown()">
+            <span>📋 Copy Markdown</span>
+          </button>
+          <button class="btn-topbar" onclick="downloadMarkdownFile()">
+            <span>💾 Download .md</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Dual Pane Workspace -->
+      <div class="builder-grid">
+        <!-- Left: Interactive Form Controls -->
+        <div class="form-pane">
+          <!-- 1. Header & Bio -->
+          <div class="form-section">
+            <span class="section-title">👤 Header & Introduction</span>
+            <div class="form-row-2">
+              <div class="form-group">
+                <label class="form-label" for="inp-name">Your Full Name:</label>
+                <input type="text" id="inp-name" class="text-input" value="Alex Morgan" oninput="generateREADME()" aria-label="Your Full Name">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="inp-title">Current Role / Title:</label>
+                <input type="text" id="inp-title" class="text-input" value="Full-Stack Software Engineer" oninput="generateREADME()" aria-label="Current Role or Title">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="inp-bio">Brief Catchy Subtitle / Pitch:</label>
+              <input type="text" id="inp-bio" class="text-input" value="Passionate about building scalable web applications and open-source tooling." oninput="generateREADME()" aria-label="Brief Subtitle or Pitch">
+            </div>
+
+            <div class="form-row-2">
+              <div class="form-group">
+                <label class="form-label" for="inp-location">Location:</label>
+                <input type="text" id="inp-location" class="text-input" value="San Francisco, CA" oninput="generateREADME()" aria-label="Location">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="inp-portfolio">Portfolio / Website URL:</label>
+                <input type="text" id="inp-portfolio" class="text-input" value="https://example.com" oninput="generateREADME()" aria-label="Portfolio URL">
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Bullet Point Highlights -->
+          <div class="form-section">
+            <span class="section-title">📌 About Me Bullet Points</span>
+            <div class="form-group">
+              <label class="form-label" for="inp-working">🔭 I’m currently working on:</label>
+              <input type="text" id="inp-working" class="text-input" value="A distributed real-time SaaS platform" oninput="generateREADME()" aria-label="Currently working on">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="inp-learning">🌱 I’m currently learning:</label>
+              <input type="text" id="inp-learning" class="text-input" value="Rust, WebAssembly & Cloud Architecture" oninput="generateREADME()" aria-label="Currently learning">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="inp-ask">💬 Ask me about:</label>
+              <input type="text" id="inp-ask" class="text-input" value="TypeScript, React, Node.js, and Docker" oninput="generateREADME()" aria-label="Ask me about">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="inp-fun">⚡ Fun fact:</label>
+              <input type="text" id="inp-fun" class="text-input" value="I drink more coffee than git commits!" oninput="generateREADME()" aria-label="Fun fact">
+            </div>
+          </div>
+
+          <!-- 3. GitHub Username & Live Stats -->
+          <div class="form-section">
+            <span class="section-title">📊 Dynamic GitHub Stats & Theme</span>
+            <div class="form-row-2">
+              <div class="form-group">
+                <label class="form-label" for="inp-gh-user">GitHub Username (for stats cards):</label>
+                <input type="text" id="inp-gh-user" class="text-input" value="octocat" oninput="generateREADME()" aria-label="GitHub Username">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="sel-theme">Stats Theme:</label>
+                <select id="sel-theme" class="text-input" onchange="generateREADME()" aria-label="Stats Theme">
+                  <option value="tokyonight" selected>Tokyo Night</option>
+                  <option value="radical">Radical</option>
+                  <option value="github_dark">GitHub Dark</option>
+                  <option value="dracula">Dracula</option>
+                  <option value="oceanic">Oceanic</option>
+                </select>
+              </div>
+            </div>
+
+            <div style="display:flex; flex-direction:column; gap:6px; margin-top:4px;">
+              <label style="display:flex; align-items:center; gap:8px; font-size:0.85rem; font-weight:700; color:var(--text); cursor:pointer;">
+                <input type="checkbox" id="chk-stats" checked onchange="generateREADME()" aria-label="Show GitHub Stats Card">
+                <span>Show General GitHub Stats Card (Stars, Commits, PRs)</span>
+              </label>
+              <label style="display:flex; align-items:center; gap:8px; font-size:0.85rem; font-weight:700; color:var(--text); cursor:pointer;">
+                <input type="checkbox" id="chk-langs" checked onchange="generateREADME()" aria-label="Show Top Languages Card">
+                <span>Show Top Languages Breakdown Card</span>
+              </label>
+              <label style="display:flex; align-items:center; gap:8px; font-size:0.85rem; font-weight:700; color:var(--text); cursor:pointer;">
+                <input type="checkbox" id="chk-streak" checked onchange="generateREADME()" aria-label="Show Streak Stats Card">
+                <span>Show Consecutive Contribution Streak Card</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- 4. Tech Stack Badges -->
+          <div class="form-section">
+            <span class="section-title">🛠️ Tech Stack & Skills Badges</span>
+
+            <!-- Languages -->
+            <div class="skills-category">
+              <span class="skills-subhead">Languages</span>
+              <div class="badge-selection-wrap" id="skills-languages">
+                <!-- Chips rendered by JS -->
+              </div>
+            </div>
+
+            <!-- Frontend -->
+            <div class="skills-category">
+              <span class="skills-subhead">Frontend</span>
+              <div class="badge-selection-wrap" id="skills-frontend">
+                <!-- Chips rendered by JS -->
+              </div>
+            </div>
+
+            <!-- Backend & Databases -->
+            <div class="skills-category">
+              <span class="skills-subhead">Backend & Cloud</span>
+              <div class="badge-selection-wrap" id="skills-backend">
+                <!-- Chips rendered by JS -->
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. Social Connect Links -->
+          <div class="form-section">
+            <span class="section-title">🌐 Social Connect Links</span>
+            <div class="form-row-2">
+              <div class="form-group">
+                <label class="form-label" for="inp-linkedin">LinkedIn Username:</label>
+                <input type="text" id="inp-linkedin" class="text-input" value="alexmorgan" oninput="generateREADME()" aria-label="LinkedIn Username">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="inp-x">X / Twitter Handle:</label>
+                <input type="text" id="inp-x" class="text-input" value="alexmorgan_dev" oninput="generateREADME()" aria-label="X or Twitter Handle">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Live Output Screen -->
+        <div class="output-pane">
+          <!-- Visual Preview Box -->
+          <div class="preview-canvas-box" id="preview-container">
+            <!-- Dynamic HTML preview injected here -->
+          </div>
+
+          <!-- Raw Markdown Code Box (Hidden initially) -->
+          <textarea id="raw-markdown" class="markdown-code-area" style="display:none;" readonly aria-label="Generated Markdown Output"></textarea>
+        </div>
+      </div>
+
+      <!-- Semantic 3-Step Instruction Bar (No h4 skips) -->
+      <div class="action-steps-bar">
+        <div class="action-step">
+          <span class="step-num">1</span>
+          <div class="step-text">
+            <strong class="step-title">Create Secret Repository</strong>
+            <p>Create a new public repository on GitHub matching your username (e.g. <code>username/username</code>).</p>
+          </div>
+        </div>
+        <div class="action-step">
+          <span class="step-num">2</span>
+          <div class="step-text">
+            <strong class="step-title">Customize Profile Details</strong>
+            <p>Select your programming stack, configure dynamic stats cards, and link your developer profiles.</p>
+          </div>
+        </div>
+        <div class="action-step">
+          <span class="step-num">3</span>
+          <div class="step-text">
+            <strong class="step-title">Copy & Commit README</strong>
+            <p>Click 'Copy Markdown' and paste directly into your special repository's <code>README.md</code> file.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comprehensive Developer Guide & In-Depth Content -->
+    <article class="article-container">
+      <h2>Why Your GitHub Profile README is Your Developer Resume</h2>
+      <p>
+        In the modern software engineering industry, your <strong>GitHub Profile</strong> serves as your living, interactive technical portfolio. When hiring managers, engineering directors, or open-source collaborators evaluate your profile, they rarely dig through dozens of unstructured repositories. Instead, they look at your <strong>Profile README</strong>.
+      </p>
+
+      <div class="highlight-card">
+        <strong>💡 The First Impression Rule:</strong> A well-curated profile README signals seniority, attention to detail, and active technical competence. It consolidates your current project focuses, primary programming languages, and verified GitHub contributions into a single compelling narrative.
+      </div>
+
+      <h2>The Anatomy of an Outstanding GitHub Profile README</h2>
+      <p>
+        An elite developer profile balances visual appeal with informative, substantive content. Here are the core pillars that top-tier engineers include:
+      </p>
+
+      <h3>1. The Hero Banner & Professional Value Proposition</h3>
+      <p>
+        Start with a clean introduction outlining who you are and what you build. Avoid generic statements; highlight your specializations (e.g., <em>"Specializing in High-Throughput Distributed Microservices & React Architecture"</em>).
+      </p>
+
+      <h3>2. Curated Tech Stack & Skills Badges</h3>
+      <p>
+        Use uniform, color-matched <strong>Shields.io</strong> badges to showcase your technical fluency. Rather than listing every technology you have ever touched, curate your strongest proficiencies across Languages, Frameworks, and Cloud Infrastructure.
+      </p>
+
+      <h3>3. Real-Time Dynamic Analytics & Contribution Streaks</h3>
+      <p>
+        Embedding dynamic SVG cards (powered by GitHub's public GraphQL API) validates your daily coding consistency. Displaying stars earned, pull requests merged, and language distributions provides immediate empirical proof of open-source participation.
+      </p>
+
+      <h2>Comparison Table: GitHub Profile Presentation Strategies</h2>
+      <div class="table-wrap">
+        <table class="content-table">
+          <thead>
+            <tr>
+              <th>Profile Strategy</th>
+              <th>Recruiter Appeal</th>
+              <th>Maintenance Overhead</th>
+              <th>Key Strengths & Weaknesses</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Dynamic Badge & Stats README (This Tool)</strong></td>
+              <td>Very High</td>
+              <td>Zero (Auto-updates via API)</td>
+              <td>Eye-catching, professional, visual metrics, fast loading</td>
+            </tr>
+            <tr>
+              <td><strong>Empty / Default Profile (No README)</strong></td>
+              <td>Low</td>
+              <td>None</td>
+              <td>Hides your personality and best repositories under generic lists</td>
+            </tr>
+            <tr>
+              <td><strong>Static Wall of Text</strong></td>
+              <td>Medium</td>
+              <td>Low</td>
+              <td>Informative but unengaging; lacks dynamic coding metrics</td>
+            </tr>
+            <tr>
+              <td><strong>Complex GitHub Actions Scripting</strong></td>
+              <td>High</td>
+              <td>High (Requires ongoing CI maintenance)</td>
+              <td>Automates blog feeds, but prone to workflow timeout breaks</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Step-by-Step Guide: How to Activate Your Special Profile Repository</h2>
+      <ol>
+        <li><strong>Open GitHub:</strong> Navigate to <code>https://github.com/new</code> to create a fresh repository.</li>
+        <li><strong>Enter Your Username:</strong> In the <em>Repository name</em> field, enter your exact GitHub username (e.g., if your account is <code>octocat</code>, name the repo <code>octocat</code>).</li>
+        <li><strong>Verify the Secret Easter Egg:</strong> GitHub will display a message box: <em>"You found a secret! [username]/[username] is a special repository that you can use to add a README.md to your GitHub profile."</em></li>
+        <li><strong>Set Visibility to Public:</strong> The repository must be marked <strong>Public</strong> for the profile to appear on your homepage.</li>
+        <li><strong>Check 'Add a README file':</strong> Initialize the repo with a README.</li>
+        <li><strong>Paste Your Markdown:</strong> Use our generator above, click <strong>Copy Markdown</strong>, edit the repository's <code>README.md</code>, and hit <strong>Commit changes</strong>!</li>
+      </ol>
+
+      <h2>Frequently Asked Questions (FAQ)</h2>
+      <div class="faq-block">
+        <div class="faq-card">
+          <div class="faq-header" onclick="toggleFaqCard(this)">
+            <span>Why are my GitHub stats cards showing 'User not found'?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-body">
+            Ensure you typed your exact GitHub username into the 'GitHub Username' field without any leading '@' symbol or URL prefixes. The cards fetch public data directly from GitHub's official API.
+          </div>
+        </div>
+
+        <div class="faq-card">
+          <div class="faq-header" onclick="toggleFaqCard(this)">
+            <span>Can I customize the color themes of the stats cards?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-body">
+            Yes! Use the 'Stats Theme' dropdown menu to choose between Tokyo Night, Radical, GitHub Dark, Dracula, and Oceanic themes.
+          </div>
+        </div>
+
+        <div class="faq-card">
+          <div class="faq-header" onclick="toggleFaqCard(this)">
+            <span>Does this generator store my personal information or GitHub tokens?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-body">
+            No. The tool runs 100% locally in your web browser. No personal information, GitHub passwords, or personal access tokens are ever requested, stored, or sent to any remote server.
+          </div>
+        </div>
+
+        <div class="faq-card">
+          <div class="faq-header" onclick="toggleFaqCard(this)">
+            <span>Can I add custom projects and repos to the generated README?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-body">
+            Yes. The generated Markdown is standard, clean, and unminified. After copying the code, you can open it in any text editor or inside GitHub's web interface to insert project links, screenshots, or blog post lists.
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- Notification Toast -->
+  <div id="toast">Ready!</div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-wrap">
+      <p>© <span id="current-year"></span> All rights reserved — GitHub Profile README Generator.</p>
+      <div class="footer-nav">
+        <a href="#generator-app">Profile Generator</a>
+        <a href="https://1io-site.blogspot.com" target="_blank" rel="noopener">By: 1io.site</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Profile Generator Engine -->
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Curated Badge Dictionary with Shields.io parameters
+    const badgeLibrary = {
+      languages: [
+        { name: "JavaScript", slug: "javascript", color: "F7DF1E", logoColor: "black" },
+        { name: "TypeScript", slug: "typescript", color: "3178C6", logoColor: "white" },
+        { name: "Python", slug: "python", color: "3776AB", logoColor: "white" },
+        { name: "HTML5", slug: "html5", color: "E34F26", logoColor: "white" },
+        { name: "CSS3", slug: "css3", color: "1572B6", logoColor: "white" },
+        { name: "Go", slug: "go", color: "00ADD8", logoColor: "white" },
+        { name: "Rust", slug: "rust", color: "000000", logoColor: "white" },
+        { name: "Java", slug: "openjdk", color: "ED8B00", logoColor: "white" },
+        { name: "C++", slug: "cplusplus", color: "00599C", logoColor: "white" }
+      ],
+      frontend: [
+        { name: "React", slug: "react", color: "20232A", logoColor: "61DAFB" },
+        { name: "Next.js", slug: "nextdotjs", color: "000000", logoColor: "white" },
+        { name: "Vue.js", slug: "vuedotjs", color: "4FC08D", logoColor: "white" },
+        { name: "TailwindCSS", slug: "tailwindcss", color: "06B6D4", logoColor: "white" },
+        { name: "Bootstrap", slug: "bootstrap", color: "7952B3", logoColor: "white" }
+      ],
+      backend: [
+        { name: "Node.js", slug: "nodedotjs", color: "339933", logoColor: "white" },
+        { name: "Express", slug: "express", color: "000000", logoColor: "white" },
+        { name: "PostgreSQL", slug: "postgresql", color: "4169E1", logoColor: "white" },
+        { name: "MongoDB", slug: "mongodb", color: "47A248", logoColor: "white" },
+        { name: "Docker", slug: "docker", color: "2496ED", logoColor: "white" },
+        { name: "Git", slug: "git", color: "F05032", logoColor: "white" }
+      ]
+    };
+
+    let selectedBadges = new Set(["JavaScript", "TypeScript", "Python", "React", "Next.js", "Node.js", "PostgreSQL", "Docker", "Git"]);
+
+    function initBadgeChips() {
+      const renderCategory = (list, containerId) => {
+        const container = document.getElementById(containerId);
+        container.innerHTML = "";
+        list.forEach(item => {
+          const isSelected = selectedBadges.has(item.name);
+          const chip = document.createElement('label');
+          chip.className = `skill-chip ${isSelected ? 'selected' : ''}`;
+          chip.innerHTML = `
+            <input type="checkbox" ${isSelected ? 'checked' : ''} onchange="toggleBadge('${item.name}')">
+            <span>${item.name}</span>
+          `;
+          container.appendChild(chip);
+        });
+      };
+
+      renderCategory(badgeLibrary.languages, "skills-languages");
+      renderCategory(badgeLibrary.frontend, "skills-frontend");
+      renderCategory(badgeLibrary.backend, "skills-backend");
+    }
+
+    function toggleBadge(badgeName) {
+      if (selectedBadges.has(badgeName)) {
+        selectedBadges.delete(badgeName);
+      } else {
+        selectedBadges.add(badgeName);
+      }
+      initBadgeChips();
+      generateREADME();
+    }
+
+    function generateREADME() {
+      const name = document.getElementById('inp-name').value.trim() || "Developer";
+      const title = document.getElementById('inp-title').value.trim();
+      const bio = document.getElementById('inp-bio').value.trim();
+      const location = document.getElementById('inp-location').value.trim();
+      const portfolio = document.getElementById('inp-portfolio').value.trim();
+
+      const working = document.getElementById('inp-working').value.trim();
+      const learning = document.getElementById('inp-learning').value.trim();
+      const ask = document.getElementById('inp-ask').value.trim();
+      const fun = document.getElementById('inp-fun').value.trim();
+
+      const ghUser = document.getElementById('inp-gh-user').value.trim() || "octocat";
+      const theme = document.getElementById('sel-theme').value;
+
+      const showStats = document.getElementById('chk-stats').checked;
+      const showLangs = document.getElementById('chk-langs').checked;
+      const showStreak = document.getElementById('chk-streak').checked;
+
+      const linkedin = document.getElementById('inp-linkedin').value.trim();
+      const twitter = document.getElementById('inp-x').value.trim();
+
+      // Build Markdown
+      let md = `# Hi there, I'm ${name} 👋\n\n`;
+      if (title) md += `### ${title}\n\n`;
+      if (bio) md += `${bio}\n\n`;
+
+      // Meta info
+      let metaItems = [];
+      if (location) metaItems.push(`📍 Based in **${location}**`);
+      if (portfolio) metaItems.push(`🌐 [Visit Portfolio Website](${portfolio})`);
+      if (metaItems.length > 0) {
+        md += metaItems.join(' • ') + '\n\n---\n\n';
+      }
+
+      // Bullets
+      md += `### 🚀 About Me\n\n`;
+      if (working) md += `- 🔭 I’m currently working on **${working}**\n`;
+      if (learning) md += `- 🌱 I’m currently learning **${learning}**\n`;
+      if (ask) md += `- 💬 Ask me about **${ask}**\n`;
+      if (fun) md += `- ⚡ Fun fact: **${fun}**\n`;
+      md += `\n`;
+
+      // Skills Badges
+      if (selectedBadges.size > 0) {
+        md += `### 🛠️ Languages and Tools\n\n<p align="left">\n`;
+        const allBadges = [...badgeLibrary.languages, ...badgeLibrary.frontend, ...badgeLibrary.backend];
+        allBadges.forEach(item => {
+          if (selectedBadges.has(item.name)) {
+            md += `  <img src="https://img.shields.io/badge/${encodeURIComponent(item.name)}-${item.color}?style=for-the-badge&logo=${item.slug}&logoColor=${item.logoColor}" alt="${item.name}" />\n`;
+          }
+        });
+        md += `</p>\n\n`;
+      }
+
+      // GitHub Stats
+      if (showStats || showLangs || showStreak) {
+        md += `### 📊 GitHub Activity & Stats\n\n<p align="left">\n`;
+        if (showStats) {
+          md += `  <img src="https://github-readme-stats.vercel.app/api?username=${ghUser}&show_icons=true&theme=${theme}&hide_border=true" alt="${ghUser}'s GitHub Stats" />\n`;
+        }
+        if (showLangs) {
+          md += `  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=${ghUser}&layout=compact&theme=${theme}&hide_border=true" alt="Top Languages" />\n`;
+        }
+        if (showStreak) {
+          md += `  <img src="https://github-readme-streak-stats.herokuapp.com/?user=${ghUser}&theme=${theme}&hide_border=true" alt="Streak Stats" />\n`;
+        }
+        md += `</p>\n\n`;
+      }
+
+      // Connect
+      if (linkedin || twitter) {
+        md += `### 🌐 Connect With Me\n\n<p align="left">\n`;
+        if (linkedin) {
+          md += `  <a href="https://linkedin.com/in/${linkedin}" target="_blank">\n    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />\n  </a>\n`;
+        }
+        if (twitter) {
+          md += `  <a href="https://x.com/${twitter}" target="_blank">\n    <img src="https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white" alt="X" />\n  </a>\n`;
+        }
+        md += `</p>\n\n`;
+      }
+
+      // Update Textareas
+      document.getElementById('raw-markdown').value = md;
+
+      // Update Visual Preview Container
+      renderVisualPreview(md, name, title, bio, metaItems, working, learning, ask, fun, ghUser, theme, showStats, showLangs, showStreak, linkedin, twitter);
+    }
+
+    function renderVisualPreview(md, name, title, bio, metaItems, working, learning, ask, fun, ghUser, theme, showStats, showLangs, showStreak, linkedin, twitter) {
+      const container = document.getElementById('preview-container');
+      let html = `<h2 style="font-size:1.6rem; font-weight:800; margin-bottom:4px; color:#0f172a;">Hi there, I'm ${name} 👋</h2>`;
+      if (title) html += `<h3 style="font-size:1.1rem; color:#475569; margin-bottom:8px;">${title}</h3>`;
+      if (bio) html += `<p style="color:#334155; margin-bottom:12px;">${bio}</p>`;
+
+      if (metaItems.length > 0) {
+        html += `<p style="font-size:0.9rem; color:#64748b; margin-bottom:14px;">${metaItems.join(' • ')}</p><hr style="border:none; border-top:1px solid #e2e8f0; margin:14px 0;">`;
+      }
+
+      html += `<h4 style="font-size:1rem; font-weight:700; margin:16px 0 8px;">🚀 About Me</h4><ul style="margin-left:20px; color:#334155; font-size:0.92rem; margin-bottom:16px;">`;
+      if (working) html += `<li>🔭 Currently working on <strong>${working}</strong></li>`;
+      if (learning) html += `<li>🌱 Currently learning <strong>${learning}</strong></li>`;
+      if (ask) html += `<li>💬 Ask me about <strong>${ask}</strong></li>`;
+      if (fun) html += `<li>⚡ Fun fact: <strong>${fun}</strong></li>`;
+      html += `</ul>`;
+
+      // Badges
+      if (selectedBadges.size > 0) {
+        html += `<h4 style="font-size:1rem; font-weight:700; margin:16px 0 8px;">🛠️ Languages & Tools</h4><div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:16px;">`;
+        const allBadges = [...badgeLibrary.languages, ...badgeLibrary.frontend, ...badgeLibrary.backend];
+        allBadges.forEach(item => {
+          if (selectedBadges.has(item.name)) {
+            html += `<img src="https://img.shields.io/badge/${encodeURIComponent(item.name)}-${item.color}?style=for-the-badge&logo=${item.slug}&logoColor=${item.logoColor}" alt="${item.name}" style="height:28px;">`;
+          }
+        });
+        html += `</div>`;
+      }
+
+      // Stats
+      if (showStats || showLangs || showStreak) {
+        html += `<h4 style="font-size:1rem; font-weight:700; margin:16px 0 8px;">📊 GitHub Stats</h4><div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:16px;">`;
+        if (showStats) {
+          html += `<img src="https://github-readme-stats.vercel.app/api?username=${ghUser}&show_icons=true&theme=${theme}&hide_border=true" alt="GitHub Stats" style="height:140px; border-radius:8px;">`;
+        }
+        if (showLangs) {
+          html += `<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=${ghUser}&layout=compact&theme=${theme}&hide_border=true" alt="Top Languages" style="height:140px; border-radius:8px;">`;
+        }
+        if (showStreak) {
+          html += `<img src="https://github-readme-streak-stats.herokuapp.com/?user=${ghUser}&theme=${theme}&hide_border=true" alt="Streak Stats" style="height:140px; border-radius:8px;">`;
+        }
+        html += `</div>`;
+      }
+
+      // Socials
+      if (linkedin || twitter) {
+        html += `<h4 style="font-size:1rem; font-weight:700; margin:16px 0 8px;">🌐 Connect With Me</h4><div style="display:flex; gap:8px;">`;
+        if (linkedin) {
+          html += `<a href="https://linkedin.com/in/${linkedin}" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" style="height:28px;"></a>`;
+        }
+        if (twitter) {
+          html += `<a href="https://x.com/${twitter}" target="_blank"><img src="https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white" alt="X" style="height:28px;"></a>`;
+        }
+        html += `</div>`;
+      }
+
+      container.innerHTML = html;
+    }
+
+    function switchView(mode) {
+      const previewContainer = document.getElementById('preview-container');
+      const rawTextarea = document.getElementById('raw-markdown');
+      const tabPreview = document.getElementById('tab-btn-preview');
+      const tabRaw = document.getElementById('tab-btn-raw');
+
+      if (mode === 'preview') {
+        previewContainer.style.display = 'block';
+        rawTextarea.style.display = 'none';
+        tabPreview.classList.add('active');
+        tabRaw.classList.remove('active');
+      } else {
+        previewContainer.style.display = 'none';
+        rawTextarea.style.display = 'block';
+        tabRaw.classList.add('active');
+        tabPreview.classList.remove('active');
+      }
+    }
+
+    function copyMarkdown() {
+      const code = document.getElementById('raw-markdown').value;
+      navigator.clipboard.writeText(code).then(() => {
+        showToast('📋 Markdown copied to clipboard!');
+      }).catch(() => {
+        showToast('Markdown code copied!');
+      });
+    }
+
+    function downloadMarkdownFile() {
+      const code = document.getElementById('raw-markdown').value;
+      const blob = new Blob([code], { type: 'text/markdown;charset=utf-8' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'README.md';
+      link.click();
+      showToast('💾 README.md downloaded!');
+    }
+
+    function loadSampleData() {
+      document.getElementById('inp-name').value = "Sarah Connor";
+      document.getElementById('inp-title').value = "Senior Cloud Architect & Devops Enthusiast";
+      document.getElementById('inp-bio').value = "Building resilient distributed systems, automating CI/CD pipelines, and writing about cloud-native engineering.";
+      document.getElementById('inp-location').value = "Berlin, Germany";
+      document.getElementById('inp-portfolio').value = "https://sarahconnor.dev";
+      document.getElementById('inp-working').value = "Kubernetes multi-region failover automation";
+      document.getElementById('inp-learning').value = "eBPF, Rust, and WebAssembly";
+      document.getElementById('inp-ask').value = "Terraform, Docker, AWS, and Microservices";
+      document.getElementById('inp-fun').value = "I've visited 24 countries and run marathons!";
+      document.getElementById('inp-gh-user').value = "octocat";
+
+      selectedBadges = new Set(["Go", "Rust", "Python", "Docker", "Git", "PostgreSQL"]);
+      initBadgeChips();
+      generateREADME();
+      showToast('✨ Sample profile data loaded!');
+    }
+
+    function toggleFaqCard(header) {
+      header.parentElement.classList.toggle('open');
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.textContent = msg;
+      toast.classList.add('active');
+      setTimeout(() => {
+        toast.classList.remove('active');
+      }, 3000);
+    }
+
+    // Initialize on load
+    initBadgeChips();
+    generateREADME();
+  </script>
+</body>
+</html>
